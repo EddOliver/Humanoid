@@ -35,3 +35,5 @@ Face redcognition for additional verification when recovering the wallet.
 Chat messages between wallets and Humanoid users.
 
 # OpenZeppelin
+
+Smart contracts for ERC-20 and NFTs.
