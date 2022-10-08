@@ -26,6 +26,8 @@ Websockets for our IoT fingerprint service and miscelaneous notifications.
 
 # Livepeer
 
+Face redcognition for additional verification when recovering the wallet.
+
 
 
 # XMTP
