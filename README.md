@@ -11,6 +11,7 @@ Account abstraction wallet.
 # Push Protocol
 
 # UMA
+We are mainly using UMA's oracle for our price feeds in our main landing screen that shows the wallet's balance.
 
 # Streamr Network
 
