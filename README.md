@@ -22,7 +22,11 @@ We are mainly using UMA's oracle for our price feeds in our main landing screen 
 
 # Streamr Network
 
+Websockets for our IoT fingerprint service and miscelaneous notifications.
+
 # Livepeer
+
+
 
 # XMTP
 
