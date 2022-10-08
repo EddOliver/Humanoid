@@ -3,6 +3,7 @@ Account abstraction wallet.
 
 
 # Polygon 
+Polygon is our main side "mempool" where we deploy our main Smart contract that deals with Account Abstraction.
 
 # WalletConnect
 
