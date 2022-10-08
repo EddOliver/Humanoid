@@ -32,4 +32,6 @@ Face redcognition for additional verification when recovering the wallet.
 
 # XMTP
 
+Chat messages between wallets and Humanoid users.
+
 # OpenZeppelin
