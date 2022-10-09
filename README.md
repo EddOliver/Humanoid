@@ -28,7 +28,19 @@ Code: https://github.com/EddOliver/Humanoid/blob/main/WebApp/src/pages/recover.j
 
 The main technical aspects of the project revolve around reaching a PoC of Account Abstraction using Polygon in this case, but our main purpose is much more related trying to solve ownership disputes creating a public goods offering that can tackle this. Which is one of the biggest problems in LATAM.
 
+- Como parte del modelo de Smart Contract Wallet de Vitalik, tratamos de seguir los siguientes puntos.
+  - Multisigs and social recovery
+  - Upgradeability
 
+<img src="https://i.ibb.co/TKdVNfb/Screenshot-2022-10-09-074317.png">
+
+- La wallet provee las funciones de recuperarse en el caso de poder comprobar que eres el dueño, para este PoC se decidio usa la huella dactilar o una password.
+
+<img src="https://i.ibb.co/sHv6QLt/Screenshot-2022-10-09-074801.png">
+
+- A su vez una parte muy importante de la wallet, como se pide, es que haya una recuperacion social, siendo podible recuperar una wallet si un grupo de personas lo desea.
+
+<img src="https://i.ibb.co/ZK3p95m/Screenshot-2022-10-09-075009.png">
 
 # Pocket Network
 
