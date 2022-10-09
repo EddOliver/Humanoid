@@ -1,5 +1,5 @@
 # Humanoid
-Account abstraction wallet.
+An Account Abstraction Wallet and DApp that aims to solve ownership problems in Latin America.
 
 Demo Page:
 https://main.d27yho91ltireb.amplifyapp.com/
@@ -15,7 +15,7 @@ Code: https://github.com/EddOliver/Humanoid/blob/main/Contracts/HumanoidWallet.s
 
 We use walletconnect to login to the system via our main wallet in order to reach most of the services, said wallet can also be recovered via PoH.
 
-- Login a la pagina principal, para poder acceder a los multiples servicios que ofrece nuesta plataforma.
+- Login to the main webpage, to be able to access the multiple services offered by our platform.
 
 <img src="https://i.ibb.co/QNWGjgM/Screenshot-2022-10-09-065704.png">
 
@@ -23,7 +23,7 @@ We use walletconnect to login to the system via our main wallet in order to reac
 
 Code: https://github.com/EddOliver/Humanoid/blob/main/WebApp/src/pages/login.js
 
-- Social Recovery, en ste caso las interaccones con el contrato y la recuperacion de la cuenta se hacen atravez de WalletConnect, para asi reunir las firmas y poder realizar en Upgrade de la Bundler Account.
+- Social Recovery, in this case, the interactions with the contract and the recovery of the account are made through WalletConnect, in order to gather the signatures and be able to upgrade the Bundler Account.
 
 <img src="https://i.ibb.co/5WVKhKK/Screenshot-2022-10-09-070229.png">
 
@@ -33,31 +33,31 @@ Code: https://github.com/EddOliver/Humanoid/blob/main/WebApp/src/pages/recover.j
 
 The main technical aspects of the project revolve around reaching a PoC of Account Abstraction using Polygon in this case, but our main purpose is much more related trying to solve ownership disputes creating a public goods offering that can tackle this. Which is one of the biggest problems in LATAM.
 
-- Como parte del modelo de Smart Contract Wallet de Vitalik, tratamos de seguir los siguientes puntos.
+- As part of Vitalik's Smart Contract Wallet model, we try to follow the following points.
   - Multisigs and social recovery
   - Upgradeability
 
 <img src="https://i.ibb.co/TKdVNfb/Screenshot-2022-10-09-074317.png">
 
-- La wallet provee las funciones de recuperarse en el caso de poder comprobar que eres el dueño, para este PoC se decidio usa la huella dactilar o una password.
+- The wallet provides the functions of recovering in the case of being able to verify that you are the owner, for this PoC it was decided to use the fingerprint or a password.
 
 <img src="https://i.ibb.co/sHv6QLt/Screenshot-2022-10-09-074801.png">
 
-- A su vez una parte muy importante de la wallet, como se pide, es que haya una recuperacion social, siendo podible recuperar una wallet si un grupo de personas lo desea.
+- In turn, a very important part of the wallet, as requested, is that there is a social recovery, being possible to recover a wallet if a group of people wishes it.
 
 <img src="https://i.ibb.co/ZK3p95m/Screenshot-2022-10-09-075009.png">
 
 # Pocket Network
 
-Utilizamos los RPP de pocket network con el fin de poder utilizar varias chains a la vez.
+We use the pocket network's RPC in order to be able to use several chains at the same time.
 
-- En el primer caso como nuestra plataforma relizar una revision de, si la wallet de la persona tiene una direccion de ENS o no, esto tiene que realizarse mediante una RPC de Etherum.
+- In the first case, as our platform performs a review of whether the person's wallet has an ENS address or not, this has to be done through an Etherum RPC.
 
 <img src="https://i.ibb.co/HxXMhBJ/Screenshot-2022-10-09-070936.png">
 
 Code: https://github.com/EddOliver/Humanoid/blob/main/WebApp/src/pages/login.js
 
-- En el resto de la aplicacion se utilizo las RPC de polygon ya que toda nuestra solucion corre en esta.
+- In the rest of the application, the polygon RPCs were used since all our solution runs in it.
 
 # Streamr Network
 
@@ -70,17 +70,17 @@ Nuestro Stream: https://streamr.network/network-explorer/streams/0x905d45128f4ae
 
 <img src="https://i.ibb.co/MZ5fWhX/Screenshot-2022-10-09-071352.png">
 
-- Ya que el nodo tiene puramente conexiones sin certificado, fue necesario utilizar un sevricio de tunel, para poder conectarnos desde una pagina web en produccion.
+- Since the node has purely connections without a certificate, it was necessary to use a tunnel service, to be able to connect from a web page in production.
 
 <img src="https://i.ibb.co/m9dtV6w/image-11.png">
 
-- En el caso de la plaforma, ya que requiere recibir datos del sensor de huella, se decidio utilizar la red en modo Websockets.
+- In the case of the platform, since it requires receiving data from the fingerprint sensor, it was decided to use the network in Websockets mode.
 
 <img src="https://i.ibb.co/hyMZc2K/Screenshot-2022-10-09-071236.png">
 
 Code: https://github.com/EddOliver/Humanoid/blob/main/WebApp/src/pages/create.js
 
-- Pol ultimo para poder utlizar nuestro sensor de huella por IoT, se prefirio utilizar el modo mqtt, ya que es mas docil al momento de realizar conexiones con nuestro device.
+- Finally, to be able to use our IoT fingerprint sensor, it was preferred to use the mqtt mode, since it is more docile when making connections with our device.
 
 <img src="https://i.ibb.co/VwxX7DZ/Whats-App-Image-2022-10-09-at-07-17-03.jpg">
 
@@ -90,7 +90,7 @@ Code: https://github.com/EddOliver/Humanoid/blob/main/StreamrNetworkFingerprint/
 
 Chat messages between wallets and Humanoid users.
 
-- En nuestra plataforma es muy importante darle a los usuarios capacidad de hablar entre ellos, utilizando un metodo seguro y facil de usar, como parte de nuestro proyecto se decidio usar XMTP para el chat el chat privado entre wallets.
+- For us it is very important to give users the ability to talk to each other, using a secure and easy-to-use method, as part of our project it was decided to use XMTP for private chat between wallets.
 
 <img src="https://i.ibb.co/XSQNdHV/Screenshot-2022-10-09-072921.png">
 
@@ -100,7 +100,7 @@ Code: https://github.com/EddOliver/Humanoid/blob/main/WebApp/src/pages/login.js
 
 Smart contracts for ERC-20 and NFTs.
 
-- Para nuestro desarrollo fue indispensable el tener lo contratos de OpenZeppelin a nuestra disposicion, ya que para poder darle las funionalidades correctas a la wallet y poder realizar tranferencias de ERC20 tokens y ERC721.
+- For our development it was essential to have the OpenZeppelin contracts at our disposal, since in order to give the wallet the correct functionalities and be able to make transfers of ERC20 tokens and ERC721.
 
         // Wallet Natives - Native Token Transfer
 
