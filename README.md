@@ -46,30 +46,69 @@ Code: https://github.com/EddOliver/Humanoid/blob/main/WebApp/src/pages/login.js
 
 Websockets for our IoT fingerprint service and miscelaneous notifications.
 
-Nuestro nodo:
+Nuestro nodo en Streamr Network: 
+https://streamr.network/network-explorer/nodes/0x905d45128f4ae35e2a5ea7b0210f8fa9a4f101d5%2375144b3c-f5af-44ed-9be6-393406ea99131
 
-Streamr Network Explorer: https://streamr.network/network-explorer/streams/0x905d45128f4ae35e2a5ea7b0210f8fa9a4f101d5%2FHumanoid/
+Nuestro Stream: https://streamr.network/network-explorer/streams/0x905d45128f4ae35e2a5ea7b0210f8fa9a4f101d5%2FHumanoid/
 
 <img src="https://i.ibb.co/MZ5fWhX/Screenshot-2022-10-09-071352.png">
+
+- Ya que el nodo tiene puramente conexiones sin certificado, fue necesario utilizar un sevricio de tunel, para poder conectarnos desde una pagina web en produccion.
+
+<img src="https://i.ibb.co/m9dtV6w/image-11.png">
 
 - En el caso de la plaforma, ya que requiere recibir datos del sensor de huella, se decidio utilizar la red en modo Websockets.
 
 <img src="https://i.ibb.co/hyMZc2K/Screenshot-2022-10-09-071236.png">
 
+Code: https://github.com/EddOliver/Humanoid/blob/main/WebApp/src/pages/create.js
+
 - Pol ultimo para poder utlizar nuestro sensor de huella por IoT, se prefirio utilizar el modo mqtt, ya que es mas docil al momento de realizar conexiones con nuestro device.
 
 <img src="https://i.ibb.co/VwxX7DZ/Whats-App-Image-2022-10-09-at-07-17-03.jpg">
 
-Code: 
+Code: https://github.com/EddOliver/Humanoid/blob/main/StreamrNetworkFingerprint/StreamrNetworkFingerprint.ino
 
 # XMTP
 
 Chat messages between wallets and Humanoid users.
 
+- En nuestra plataforma es muy importante darle a los usuarios capacidad de hablar entre ellos, utilizando un metodo seguro y facil de usar, como parte de nuestro proyecto se decidio usar XMTP para el chat el chat privado entre wallets.
 
+<img src="https://i.ibb.co/XSQNdHV/Screenshot-2022-10-09-072921.png">
+
+Code: https://github.com/EddOliver/Humanoid/blob/main/WebApp/src/pages/login.js
 
 # OpenZeppelin
 
 Smart contracts for ERC-20 and NFTs.
 
+- Para nuestro desarrollo fue indispensable el tener lo contratos de OpenZeppelin a nuestra disposicion, ya que para poder darle las funionalidades correctas a la wallet y poder realizar tranferencias de ERC20 tokens y ERC721.
 
+        // Wallet Natives - Native Token Transfer
+
+        function transferNative(uint256 value, address payable to) public payable isOwner {
+        require(address(this).balance >= value);
+        to.transfer(value);
+        }
+
+        function getBalance() public view returns (uint256) {
+        return address(this).balance;
+        }
+
+        function getBalanceECR20(address s_contract) public view returns (uint256) {
+        ERC20 ERC20Contract = ERC20(s_contract);
+        return ERC20Contract.balanceOf(address(this));
+        }
+
+        function transferECR20(
+        uint256 value,
+        address to,
+        address s_contract
+        ) public isOwner {
+        ERC20 ERC20Contract = ERC20(s_contract);
+        require(ERC20Contract.balanceOf(address(this)) >= value);
+        ERC20Contract.transfer( to, value);
+        }
+
+Wallet Contract: https://github.com/EddOliver/Humanoid/blob/main/Contracts/HumanoidWallet.sol 
